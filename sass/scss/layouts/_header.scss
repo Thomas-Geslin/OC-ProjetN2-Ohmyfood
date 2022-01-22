@@ -1,0 +1,29 @@
+.logo-header {
+    margin: 20px;
+    width: 60%;
+}
+
+.header-mark {
+    display: flex;
+    justify-content: center;
+    background-color: $color-header-mark;
+        &__icon {
+            align-self: center;
+            padding-right: 15px;
+            font-size: 20px;
+            color: #353535;
+        }
+}
+
+.header-body {
+    background-color: $color-background;
+        &__title {
+            margin: 0 20px 20px 10px;
+            padding-top: 30px;
+        }
+        &__text {
+            margin-right: 22px;
+            margin-left: 22px;
+            font-size: 20px;
+        }
+}

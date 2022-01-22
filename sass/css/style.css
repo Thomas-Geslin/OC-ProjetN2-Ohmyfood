@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Roboto";
+}
+
+.logo-header {
+  margin: 20px;
+  width: 60%;
+}
+
+.header-mark {
+  display: flex;
+  justify-content: center;
+  background-color: #eaeaea;
+}
+.header-mark__icon {
+  align-self: center;
+  padding-right: 15px;
+  font-size: 20px;
+  color: #353535;
+}
+
+.header-body {
+  background-color: #f6f6f6;
+}
+.header-body__title {
+  margin: 0 20px 20px 10px;
+  padding-top: 30px;
+}
+.header-body__text {
+  margin-right: 22px;
+  margin-left: 22px;
+  font-size: 20px;
+}
+
+article h1 {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.article-card {
+  display: flex;
+  background-color: #f6f6f6;
+  margin: 25px;
+  border-radius: 15px;
+}
+.article-card__icon {
+  align-self: center;
+  padding: 22px;
+  color: #7e7e7e;
+}
+.article-card__text {
+  font-size: 17px;
+  align-self: center;
+  font-weight: bold;
+}
+
+main {
+  background-color: #f6f6f6;
+  padding-bottom: 50px;
+}
+main h1 {
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 50px;
+}
+
+figure {
+  margin: 0 20px 0 20px;
+  background-color: white;
+  box-shadow: 5px 5px 10px #dddddd;
+  border-radius: 20px;
+  height: 280px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+figure div {
+  height: 200px;
+}
+figure div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+figure figcaption {
+  display: flex;
+  text-align: left;
+  margin-left: 15px;
+}
+figure figcaption .figcaption-text {
+  flex-direction: column;
+  margin-top: 15px;
+}
+figure figcaption h2 {
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 2px;
+}
+figure figcaption p {
+  margin: 0;
+}
+figure figcaption i {
+  font-size: 30px;
+  margin-left: 135px;
+  margin-top: 20px;
+}
+
+footer {
+  background-color: #353535;
+  color: white;
+  text-align: left;
+  padding: 20px 0 20px 20px;
+}
+footer img {
+  width: 30%;
+}
+footer div {
+  display: flex;
+}
+footer div i {
+  font-size: 12px;
+  align-self: center;
+  margin-right: 10px;
+}
+footer p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.header-body__button {
+  padding: 20px;
+  margin-bottom: 50px;
+  font-family: "Roboto";
+  font-size: 20px;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  background: linear-gradient(#ff79da, #9356dc);
+}
+
+/*# sourceMappingURL=style.css.map */

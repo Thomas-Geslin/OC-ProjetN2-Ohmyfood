@@ -1,0 +1,12 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "Projet N°3 OC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./sass/scss/style.scss:./sass/css/style.css"
+  },
+  "author": "Thomas Geslin",
+  "license": "ISC"
+}
