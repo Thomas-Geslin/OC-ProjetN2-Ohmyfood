@@ -1,0 +1,45 @@
+main {
+    background-color: $color-background;
+    padding-top: 20px;
+    border-radius: 30px;
+        .main-title {
+            display: flex;
+            h1 {
+                font-family: 'Shrikhand';
+                margin-left: 20px;
+                font-size: 28px;
+            }
+            i {
+                font-size: 25px;
+                align-self: center;
+                margin-left: 70px;
+            }
+        }
+}
+.meal h2 {
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    border-bottom: $color-third 4px solid; 
+}
+
+.meal-card {
+    margin: 0 20px 0 20px;
+    background-color: white;
+    border-radius: 20px;
+        h3 {
+            margin:0 0 0 20px;
+            padding-top: 15px;
+        }
+        &__text {
+            display: flex;
+            justify-content: space-between;
+            margin:0 20px 10px 20px;
+                &--bold {
+                    font-weight: bold;
+                }
+        }
+        p {
+            margin: 5px 0 15px 0;
+        }
+}
