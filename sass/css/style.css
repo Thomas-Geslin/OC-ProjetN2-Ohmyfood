@@ -1,9 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Shrikhand&display=swap");
 body {
   margin: 0;
   padding: 0;
-  text-align: center;
   font-family: "Roboto";
+}
+
+header {
+  text-align: center;
 }
 
 .logo-header {
@@ -135,10 +138,36 @@ footer p {
   margin-bottom: 50px;
   font-family: "Roboto";
   font-size: 20px;
+  box-shadow: 2px 2px 5px grey;
   border-radius: 30px;
   border: none;
   color: white;
   background: linear-gradient(#ff79da, #9356dc);
+}
+.header-body__button:hover {
+  background: linear-gradient(#ff93e1, #a16be0);
+  box-shadow: 5px 5px 10px grey;
+  transition: 0.5s;
+}
+
+.menu-button {
+  text-align: center;
+}
+.menu-button button {
+  font-size: 20px;
+  padding: 15px 40px 15px 40px;
+  margin-top: 30px;
+  margin-bottom: 90px;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 2px 2px 5px grey;
+  color: white;
+  background: linear-gradient(#ff79da, #9356dc);
+}
+.menu-button button:hover {
+  background: linear-gradient(#ff93e1, #a16be0);
+  box-shadow: 5px 5px 10px grey;
+  transition: 0.5s;
 }
 
 /*# sourceMappingURL=style.css.map */
