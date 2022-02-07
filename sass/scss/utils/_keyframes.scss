@@ -1,0 +1,37 @@
+/*Appartition des cartes menus au chargement de la page*/
+@keyframes meal-card-animation {
+    0% {
+        transform: translateY(15px);
+        opacity: 0;
+    } 
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/*Animation du coeur*/
+@keyframes heart-animation {
+    0% {
+        color: black;
+    }
+    100% {
+        color: $color-primary;
+    }
+}
+
+@keyframes page-appearance {
+    0% {
+        transform: translateY(9999px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes loader-spin {
+    0% { transform: rotate(0deg); 
+    }
+    100% { transform: rotate(360deg); 
+    }
+}

@@ -1,7 +1,15 @@
+body {
+    background-image: url('../../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: 75px;
+}
+
 main {
     background-color: $color-background;
     padding-top: 20px;
     border-radius: 30px;
+    margin-top: 240px;
         .main-title {
             display: flex;
             h1 {

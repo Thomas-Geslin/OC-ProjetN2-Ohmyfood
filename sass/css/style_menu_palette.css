@@ -1,14 +1,58 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Shrikhand&display=swap");
+/*Appartition des cartes menus au chargement de la page*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+@keyframes meal-card-animation {
+  0% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/*Animation du coeur*/
+@keyframes heart-animation {
+  0% {
+    color: black;
+  }
+  100% {
+    color: #9356dc;
+  }
+}
+@keyframes page-appearance {
+  0% {
+    transform: translateY(9999px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 body {
   margin: 0;
   padding: 0;
   font-family: "Roboto";
 }
 
+body {
+  background-image: url("../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: 75px;
+}
+
 main {
   background-color: #f6f6f6;
   padding-top: 20px;
-  border-radius: 30px;
+  border-radius: 30px 30px 0 0;
+  margin-top: 240px;
 }
 main .main-title {
   display: flex;
@@ -28,13 +72,23 @@ main .main-title i {
   margin-left: 20px;
   text-transform: uppercase;
   font-weight: lighter;
+}
+.meal-title-border {
   border-bottom: #99e2d0 4px solid;
+  width: 70px;
 }
 
 .meal-card {
   margin: 0 20px 0 20px;
   background-color: white;
   border-radius: 20px;
+  box-shadow: 2px 2px 10px #b6b6b6;
+  opacity: 0;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  animation: meal-card-animation 0.2s linear;
+  animation-fill-mode: both;
 }
 .meal-card h3 {
   margin: 0 0 0 20px;
@@ -43,13 +97,58 @@ main .main-title i {
 .meal-card__text {
   display: flex;
   justify-content: space-between;
-  margin: 0 20px 10px 20px;
+  margin-left: 20px;
 }
 .meal-card__text--bold {
   font-weight: bold;
+  padding-right: 20px;
+  transition: transform 0.5s linear;
 }
 .meal-card p {
   margin: 5px 0 15px 0;
+}
+.meal-card02 {
+  animation: meal-card-animation 0.3s 0.15s linear;
+  animation-fill-mode: forwards;
+}
+.meal-card03 {
+  animation: meal-card-animation 0.3s 0.3s linear;
+  animation-fill-mode: forwards;
+}
+.meal-card04 {
+  animation: meal-card-animation 0.3s 0.45s linear;
+  animation-fill-mode: forwards;
+}
+.meal-card-animation {
+  background-color: #99e2d0;
+  border-radius: 0 15px 15px 0;
+  width: 100px;
+  height: 87px;
+  display: flex;
+  position: absolute;
+  right: -100px;
+  top: 0;
+  transition: transform 0.5s linear;
+}
+.meal-card-animation i {
+  color: #99e2d0;
+  background-color: white;
+  border-radius: 50%;
+  padding: 8px;
+  font-size: 22px;
+  align-self: center;
+  margin: auto;
+  transform: rotate(0turn);
+  transition: transform 0.5s ease-in-out 50ms;
+}
+.meal-card:hover > .meal-card-animation {
+  transform: translateX(-100px);
+}
+.meal-card:hover > .meal-card-animation > i {
+  transform: rotate(1turn);
+}
+.meal-card:hover > .meal-card__text > .meal-card__text--bold {
+  transform: translateX(-100px);
 }
 
 footer {
@@ -57,6 +156,10 @@ footer {
   color: white;
   text-align: left;
   padding: 20px 0 20px 20px;
+}
+footer .footer-title {
+  font-family: "Shrikhand";
+  font-size: 20px;
 }
 footer img {
   width: 30%;
@@ -86,15 +189,6 @@ footer p {
 .header-banniere .logo-header {
   margin: 20px;
   width: 50%;
-}
-
-.img-meal {
-  width: 100%;
-}
-.img-meal img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .header-body__button {

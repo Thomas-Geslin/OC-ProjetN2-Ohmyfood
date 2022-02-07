@@ -1,4 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Shrikhand&display=swap");
+/*Appartition des cartes menus au chargement de la page*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+@keyframes meal-card-animation {
+  0% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/*Animation du coeur*/
+@keyframes heart-animation {
+  0% {
+    color: black;
+  }
+  100% {
+    color: #9356dc;
+  }
+}
+@keyframes page-appearance {
+  0% {
+    transform: translateY(9999px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 body {
   margin: 0;
   padding: 0;
@@ -7,33 +43,31 @@ body {
 
 header {
   text-align: center;
+  width: auto;
 }
-
-.logo-header {
+header .logo-header {
   margin: 20px;
   width: 60%;
 }
-
-.header-mark {
+header .header-mark {
   display: flex;
   justify-content: center;
   background-color: #eaeaea;
 }
-.header-mark__icon {
+header .header-mark__icon {
   align-self: center;
   padding-right: 15px;
   font-size: 20px;
   color: #353535;
 }
-
-.header-body {
+header .header-body {
   background-color: #f6f6f6;
 }
-.header-body__title {
+header .header-body__title {
   margin: 0 20px 20px 10px;
   padding-top: 30px;
 }
-.header-body__text {
+header .header-body__text {
   margin-right: 22px;
   margin-left: 22px;
   font-size: 20px;
@@ -65,10 +99,24 @@ main {
   background-color: #f6f6f6;
   padding-bottom: 50px;
 }
+main a {
+  text-decoration: none;
+  color: black;
+}
 main h1 {
   text-align: left;
   padding-left: 20px;
   padding-top: 50px;
+}
+
+article .article-card {
+  box-shadow: 2px 2px 10px #d4d4d4;
+}
+article .article-card:hover {
+  background-color: #f5edff;
+}
+article .article-card:hover i {
+  color: #9356dc;
 }
 
 figure {
@@ -79,6 +127,20 @@ figure {
   height: 280px;
   overflow: hidden;
   margin-bottom: 15px;
+  position: relative;
+}
+figure .new {
+  color: #008766;
+  background-color: #99e2d0;
+  text-align: center;
+  height: 25px;
+  width: 100px;
+  padding-top: 8px;
+  font-weight: bold;
+  border-radius: 2px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 figure div {
   height: 200px;
@@ -107,8 +169,26 @@ figure figcaption p {
 }
 figure figcaption i {
   font-size: 30px;
-  margin-left: 135px;
+  border-radius: 50%;
   margin-top: 20px;
+  position: absolute;
+  right: 40px;
+}
+figure figcaption i:hover {
+  animation: heart-animation 1s linear;
+  animation-fill-mode: forwards;
+}
+
+.loader {
+  text-align: center;
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #3498db;
+  /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: loader-spin 2s linear infinite;
 }
 
 footer {
@@ -116,6 +196,10 @@ footer {
   color: white;
   text-align: left;
   padding: 20px 0 20px 20px;
+}
+footer .footer-title {
+  font-family: "Shrikhand";
+  font-size: 20px;
 }
 footer img {
   width: 30%;
