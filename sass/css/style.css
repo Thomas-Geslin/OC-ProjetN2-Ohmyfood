@@ -1,5 +1,40 @@
-/*Appartition des cartes menus au chargement de la page*/
+@charset "UTF-8";
+/*Apparition de la page d'acceuil après le loader*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+@keyframes page-appearance {
+  0% {
+    transform: translateY(-9999px);
+  }
+  99% {
+    transform: translateY(-9999px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/*Animation du loader*/
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader-disappearance {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-9999px);
+  }
+}
+/*Appartition des cartes menus au chargement de la page*/
 @keyframes meal-card-animation {
   0% {
     transform: translateY(15px);
@@ -10,29 +45,83 @@
     opacity: 1;
   }
 }
+/*Rogage du texte des plats*/
+@keyframes meal-text-crop {
+  0% {
+    width: auto;
+  }
+  20% {
+    max-width: 280px;
+    max-height: 19px;
+  }
+  40% {
+    max-width: 260px;
+  }
+  60% {
+    max-width: 240px;
+  }
+  80% {
+    max-width: 220px;
+  }
+  100% {
+    max-width: 200px;
+    max-height: 19px;
+  }
+}
 /*Animation du coeur*/
 @keyframes heart-animation {
   0% {
-    color: black;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  10% {
+    background: linear-gradient(to top, #9356dc, white 10%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  20% {
+    background: linear-gradient(to top, #9356dc, white 20%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  30% {
+    background: linear-gradient(to top, #9356dc, white 30%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  40% {
+    background: linear-gradient(to top, #9356dc, white 40%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  50% {
+    background: linear-gradient(to top, #9356dc, white 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  60% {
+    background: linear-gradient(to top, #9356dc, white 60%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  70% {
+    background: linear-gradient(to top, #9356dc, white 70%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  80% {
+    background: linear-gradient(to top, #9356dc, white 80%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  90% {
+    background: linear-gradient(to top, #9356dc, white);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
   }
   100% {
     color: #9356dc;
-  }
-}
-@keyframes page-appearance {
-  0% {
-    transform: translateY(9999px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-@keyframes loader-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+    -webkit-text-stroke: 2px #9356dc;
   }
 }
 body {
@@ -44,6 +133,7 @@ body {
 header {
   text-align: center;
   width: auto;
+  animation: page-appearance 1.5s linear;
 }
 header .logo-header {
   margin: 20px;
@@ -53,6 +143,7 @@ header .header-mark {
   display: flex;
   justify-content: center;
   background-color: #eaeaea;
+  font-weight: bold;
 }
 header .header-mark__icon {
   align-self: center;
@@ -71,6 +162,11 @@ header .header-body__text {
   margin-right: 22px;
   margin-left: 22px;
   font-size: 20px;
+}
+@media (min-width: 1024px) {
+  header .logo-header {
+    width: auto;
+  }
 }
 
 article h1 {
@@ -95,22 +191,16 @@ article h1 {
   font-weight: bold;
 }
 
-main {
-  background-color: #f6f6f6;
-  padding-bottom: 50px;
+/*Partie Fonctionnement*/
+article {
+  animation: page-appearance 1.5s linear;
 }
-main a {
-  text-decoration: none;
-  color: black;
-}
-main h1 {
-  text-align: left;
-  padding-left: 20px;
-  padding-top: 50px;
-}
-
 article .article-card {
   box-shadow: 2px 2px 10px #d4d4d4;
+  height: 80px;
+}
+article .article-card i {
+  font-size: 22px;
 }
 article .article-card:hover {
   background-color: #f5edff;
@@ -118,8 +208,72 @@ article .article-card:hover {
 article .article-card:hover i {
   color: #9356dc;
 }
+article .article-card__number {
+  font-size: 15px;
+  color: white;
+  background-color: #9356dc;
+  border-radius: 90%;
+  padding: 6px 10px 6px 10px;
+  align-self: center;
+  position: relative;
+  left: -10px;
+}
+@media (min-width: 1024px) {
+  article {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  article h1 {
+    display: block;
+    width: 100%;
+  }
+  article .article-card {
+    width: 30%;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+}
 
-figure {
+/*Loader de la page d'acceuil*/
+section {
+  position: absolute;
+  top: 40%;
+  left: 42%;
+  animation: loader-disappearance 1.5s linear;
+  animation-fill-mode: forwards;
+}
+section .loader {
+  text-align: center;
+  border: 25px solid #f3f3f3;
+  border-top: 25px solid #9356dc;
+  border-radius: 90%;
+  width: 200px;
+  height: 200px;
+  animation: loader-spin 1s linear infinite;
+}
+@media (max-width: 1024px) {
+  section {
+    left: 20%;
+    top: 30%;
+  }
+}
+
+/*Cartes renvoyant aux différents restaurants*/
+main {
+  background-color: #f6f6f6;
+  padding-bottom: 50px;
+  animation: page-appearance 1.5s linear;
+}
+main h1 {
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 50px;
+}
+main a {
+  text-decoration: none;
+  color: black;
+}
+main a figure {
   margin: 0 20px 0 20px;
   background-color: white;
   box-shadow: 5px 5px 10px #dddddd;
@@ -129,7 +283,7 @@ figure {
   margin-bottom: 15px;
   position: relative;
 }
-figure .new {
+main a figure .new {
   color: #008766;
   background-color: #99e2d0;
   text-align: center;
@@ -142,53 +296,60 @@ figure .new {
   top: 15px;
   right: 15px;
 }
-figure div {
+main a figure div {
   height: 200px;
 }
-figure div img {
+main a figure div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-figure figcaption {
+main a figure figcaption {
   display: flex;
   text-align: left;
   margin-left: 15px;
 }
-figure figcaption .figcaption-text {
+main a figure figcaption .figcaption-text {
   flex-direction: column;
   margin-top: 15px;
 }
-figure figcaption h2 {
+main a figure figcaption h2 {
   font-size: 18px;
   margin: 0;
   margin-bottom: 2px;
 }
-figure figcaption p {
+main a figure figcaption p {
   margin: 0;
 }
-figure figcaption i {
+main a figure figcaption i {
   font-size: 30px;
-  border-radius: 50%;
   margin-top: 20px;
   position: absolute;
   right: 40px;
+  color: white;
+  -webkit-text-stroke: 2px black;
 }
-figure figcaption i:hover {
-  animation: heart-animation 1s linear;
+main a figure figcaption i:hover {
+  animation: heart-animation 0.5s linear;
   animation-fill-mode: forwards;
 }
-
-.loader {
-  text-align: center;
-  border: 16px solid #f3f3f3;
-  /* Light grey */
-  border-top: 16px solid #3498db;
-  /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: loader-spin 2s linear infinite;
+@media (min-width: 1024px) {
+  main {
+    flex-wrap: wrap;
+    display: flex;
+  }
+  main h1 {
+    display: block;
+    width: 100%;
+  }
+  main a {
+    width: 47%;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+  main a figure {
+    margin: 0;
+  }
 }
 
 footer {
@@ -200,9 +361,7 @@ footer {
 footer .footer-title {
   font-family: "Shrikhand";
   font-size: 20px;
-}
-footer img {
-  width: 30%;
+  margin-bottom: 15px;
 }
 footer div {
   display: flex;
@@ -212,9 +371,31 @@ footer div i {
   align-self: center;
   margin-right: 10px;
 }
-footer p {
-  margin-top: 10px;
-  margin-bottom: 10px;
+footer div p {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 30px;
+}
+footer div a {
+  text-decoration: none;
+  color: white;
+}
+@media (min-width: 1024px) {
+  footer {
+    display: flex;
+    padding: 50px 0 50px 30px;
+  }
+  footer .footer-title {
+    font-size: 40px;
+    margin: 0;
+    align-self: center;
+  }
+  footer div {
+    margin: auto;
+  }
+  footer div p {
+    align-self: center;
+  }
 }
 
 .header-body__button {
@@ -232,6 +413,7 @@ footer p {
   background: linear-gradient(#ff93e1, #a16be0);
   box-shadow: 5px 5px 10px grey;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .menu-button {
@@ -241,7 +423,7 @@ footer p {
   font-size: 20px;
   padding: 15px 40px 15px 40px;
   margin-top: 30px;
-  margin-bottom: 90px;
+  margin-bottom: 60px;
   border-radius: 30px;
   border: none;
   box-shadow: 2px 2px 5px grey;
@@ -252,6 +434,12 @@ footer p {
   background: linear-gradient(#ff93e1, #a16be0);
   box-shadow: 5px 5px 10px grey;
   transition: 0.5s;
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .menu-button {
+    margin: auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

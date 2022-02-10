@@ -1,13 +1,22 @@
 .header-banniere {
     display: flex;
-        i {
+        a {
             align-self: center;
             font-size: 20px;
             margin-left: 20px;
             margin-right: 45px;
+            color: black;
         }
         .logo-header {
             margin: 20px;
             width: 50%;
         }
+    @media (min-width: $breakpoint-dekstop) {
+        i {
+            font-size: 40px;
+        }
+        .logo-header {
+            width: auto;
+        }
+    }
 }

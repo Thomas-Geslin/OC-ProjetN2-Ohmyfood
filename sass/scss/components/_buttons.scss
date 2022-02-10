@@ -12,6 +12,7 @@
             background: linear-gradient(lighten($color-secondary, 5%), lighten($color-primary, 5%));
             box-shadow: 5px 5px 10px grey;
             transition: .5s;
+            cursor: pointer;
         }
 }
 
@@ -21,7 +22,7 @@
         font-size: 20px;
         padding: 15px 40px 15px 40px;
         margin-top: 30px;
-        margin-bottom: 90px;
+        margin-bottom: 60px;
         border-radius: 30px;
         border: none;
         box-shadow: 2px 2px 5px grey;
@@ -31,6 +32,10 @@
                 background: linear-gradient(lighten($color-secondary, 5%), lighten($color-primary, 5%));
                 box-shadow: 5px 5px 10px grey;
                 transition: .5s;
+                cursor: pointer;
             }
+    }
+    @media (min-width: $breakpoint-dekstop) {
+        margin: auto;
     }
 }

@@ -1,96 +1,156 @@
-main {
-    background-color: $color-background;
-    padding-bottom: 50px;
-        a {
-            text-decoration: none;
-            color: black;
-        }
-        h1 {
-            text-align: left;
-            padding-left: 20px;
-            padding-top: 50px;
-        }
-}
-
+/*Partie Fonctionnement*/
 article {
+    animation: page-appearance 1.5s linear;
     .article-card {
         box-shadow: 2px 2px 10px rgb(212, 212, 212);
+        height: 80px;
+            i {
+                font-size: 22px;
+            }
             &:hover {
                 background-color: #f5edff;
                 i {
                     color: $color-primary;
                 }
             }
+        &__number {
+            font-size: 15px;
+            color: white;
+            background-color: $color-primary;
+            border-radius: 90%;
+            padding: 6px 10px 6px 10px;
+            align-self: center;
+            position: relative;
+            left: -10px;
+        }
+    }
+    @media (min-width: $breakpoint-dekstop) {
+        display: flex;
+        flex-wrap: wrap;
+            h1 {
+                display: block;
+                width: 100%;
+            }
+            .article-card {
+                width: 30%;
+                margin: auto;
+                margin-bottom: 40px;
+            }
     }
 }
 
-figure {
-    margin: 0 20px 0 20px;
-    background-color: white;
-    @include main-card-shadow;
-    border-radius: 20px;
-    height: 280px;
-    overflow: hidden;
-    margin-bottom: 15px;
-    position: relative;
-        .new {
-            color: #008766;
-            background-color: #99e2d0;
+/*Loader de la page d'acceuil*/
+section {
+    position: absolute;
+    top: 40%;
+    left: 42%;
+    animation: loader-disappearance 1.5s linear;
+    animation-fill-mode: forwards;
+        .loader {
             text-align: center;
-            height: 25px;
-            width: 100px;
-            padding-top: 8px;
-            font-weight: bold;
-            border-radius: 2px;
-            position: absolute;
-            top: 15px;
-            right: 15px;
+            border: 25px solid #f3f3f3;
+            border-top: 25px solid $color-primary;
+            border-radius: 90%;
+            width:200px;
+            height: 200px;
+            animation: loader-spin 1s linear infinite;
         }
-        div {
-            height: 200px;  
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-        }
-        figcaption {
-            display: flex;
-            text-align: left;
-            margin-left: 15px;
-                .figcaption-text {
-                    flex-direction: column;
-                    margin-top: 15px;
-                }
-                        h2 {
-                            font-size: 18px;
-                            margin: 0;
-                            margin-bottom: 2px;
-                        }
-                        p {
-                            margin: 0;
-                        }
-                i {
-                    font-size: 30px;
-                    border-radius: 50%;
-                    margin-top: 20px;
-                    position: absolute;
-                    right: 40px;
-                        &:hover {
-                            animation: heart-animation 1s linear;
-                            animation-fill-mode: forwards;
-                        }
-                }
-    
-        }
+    @media (max-width: $breakpoint-dekstop) {
+        left: 20%;
+        top: 30%;
+    }
 }
 
-.loader {
-    text-align: center;
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: loader-spin 2s linear infinite;
-  }
+/*Cartes renvoyant aux différents restaurants*/
+main {
+    background-color: $color-background;
+    padding-bottom: 50px;
+    animation: page-appearance 1.5s linear;
+        h1 {
+            text-align: left;
+            padding-left: 20px;
+            padding-top: 50px;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+                figure {
+                    margin: 0 20px 0 20px;
+                    background-color: white;
+                    @include main-card-shadow;
+                    border-radius: 20px;
+                    height: 280px;
+                    overflow: hidden;
+                    margin-bottom: 15px;
+                    position: relative;
+                        .new {
+                            color: #008766;
+                            background-color: #99e2d0;
+                            text-align: center;
+                            height: 25px;
+                            width: 100px;
+                            padding-top: 8px;
+                            font-weight: bold;
+                            border-radius: 2px;
+                            position: absolute;
+                            top: 15px;
+                            right: 15px;
+                        }
+                        div {
+                            height: 200px;  
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                        }
+                        figcaption {
+                            display: flex;
+                            text-align: left;
+                            margin-left: 15px;
+                                .figcaption-text {
+                                    flex-direction: column;
+                                    margin-top: 15px;
+                                }
+                                        h2 {
+                                            font-size: 18px;
+                                            margin: 0;
+                                            margin-bottom: 2px;
+                                        }
+                                        p {
+                                            margin: 0;
+                                        }
+                                i {
+                                    font-size: 30px;
+                                    margin-top: 20px;
+                                    position: absolute;
+                                    right: 40px;
+                                    color: white;
+                                    -webkit-text-stroke: 2px black;
+                                        &:hover {
+                                            animation: heart-animation .5s linear;
+                                            animation-fill-mode: forwards;
+                                        }
+                                }
+                    
+                        }
+                }
+        }
+    @media (min-width: $breakpoint-dekstop) {
+        flex-wrap: wrap;
+        display: flex;
+        h1 {
+            display: block;
+            width: 100%;
+        }
+        a {
+            width: 47%;
+            margin: auto;
+            margin-bottom: 40px;
+            figure {
+                margin: 0;
+            }
+        }
+
+    }
+}

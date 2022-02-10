@@ -1,15 +1,15 @@
-body {
+.background {
     background-image: url('../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg');
-    background-size: 100%;
+    background-size: 110%;
     background-repeat: no-repeat;
-    background-position-y: 75px;
+    height: 280px;
 }
 
 main {
     background-color: $color-background;
     padding-top: 20px;
     border-radius: 30px 30px 0 0;
-    margin-top: 240px;
+    margin-top: -25px;
         .main-title {
             display: flex;
             h1 {
@@ -23,6 +23,13 @@ main {
                 margin-left: 65px;
             }
         }
+    @media (min-width: $breakpoint-dekstop) {
+        display: flex; 
+        flex-wrap: wrap;
+            .main-title {
+                width: 100%;
+            }
+    }
 }
 
 .meal {
@@ -33,7 +40,12 @@ main {
     }
     &-title-border {
         border-bottom: $color-third 4px solid;
-        width: 70px;
+        width: 60px;
+        padding-bottom: 5px;
+    }
+    @media (min-width: $breakpoint-dekstop) {
+        width: 32%;
+        margin: auto;
     }
 }
 
@@ -107,5 +119,14 @@ main {
         }
         &:hover > &__text > &__text--bold {
             transform: translateX(-100px);
+        }
+        @media (max-width: 500px) {
+            &:hover > div > p {
+                animation: meal-text-crop .5s linear 75ms;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                animation-fill-mode: forwards;
+            }
         }
 }

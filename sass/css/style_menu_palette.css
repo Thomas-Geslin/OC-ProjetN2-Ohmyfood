@@ -1,5 +1,40 @@
-/*Appartition des cartes menus au chargement de la page*/
+@charset "UTF-8";
+/*Apparition de la page d'acceuil après le loader*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+@keyframes page-appearance {
+  0% {
+    transform: translateY(-9999px);
+  }
+  99% {
+    transform: translateY(-9999px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/*Animation du loader*/
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader-disappearance {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-9999px);
+  }
+}
+/*Appartition des cartes menus au chargement de la page*/
 @keyframes meal-card-animation {
   0% {
     transform: translateY(15px);
@@ -10,29 +45,83 @@
     opacity: 1;
   }
 }
+/*Rogage du texte des plats*/
+@keyframes meal-text-crop {
+  0% {
+    width: auto;
+  }
+  20% {
+    max-width: 280px;
+    max-height: 19px;
+  }
+  40% {
+    max-width: 260px;
+  }
+  60% {
+    max-width: 240px;
+  }
+  80% {
+    max-width: 220px;
+  }
+  100% {
+    max-width: 200px;
+    max-height: 19px;
+  }
+}
 /*Animation du coeur*/
 @keyframes heart-animation {
   0% {
-    color: black;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  10% {
+    background: linear-gradient(to top, #9356dc, white 10%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  20% {
+    background: linear-gradient(to top, #9356dc, white 20%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  30% {
+    background: linear-gradient(to top, #9356dc, white 30%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  40% {
+    background: linear-gradient(to top, #9356dc, white 40%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  50% {
+    background: linear-gradient(to top, #9356dc, white 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  60% {
+    background: linear-gradient(to top, #9356dc, white 60%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  70% {
+    background: linear-gradient(to top, #9356dc, white 70%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  80% {
+    background: linear-gradient(to top, #9356dc, white 80%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+  90% {
+    background: linear-gradient(to top, #9356dc, white);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
   }
   100% {
     color: #9356dc;
-  }
-}
-@keyframes page-appearance {
-  0% {
-    transform: translateY(9999px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-@keyframes loader-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+    -webkit-text-stroke: 2px #9356dc;
   }
 }
 body {
@@ -41,18 +130,18 @@ body {
   font-family: "Roboto";
 }
 
-body {
+.background {
   background-image: url("../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
-  background-size: 100%;
+  background-size: 110%;
   background-repeat: no-repeat;
-  background-position-y: 75px;
+  height: 280px;
 }
 
 main {
   background-color: #f6f6f6;
   padding-top: 20px;
   border-radius: 30px 30px 0 0;
-  margin-top: 240px;
+  margin-top: -25px;
 }
 main .main-title {
   display: flex;
@@ -67,6 +156,15 @@ main .main-title i {
   align-self: center;
   margin-left: 65px;
 }
+@media (min-width: 1024px) {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main .main-title {
+    width: 100%;
+  }
+}
 
 .meal h2 {
   margin-left: 20px;
@@ -75,7 +173,14 @@ main .main-title i {
 }
 .meal-title-border {
   border-bottom: #99e2d0 4px solid;
-  width: 70px;
+  width: 60px;
+  padding-bottom: 5px;
+}
+@media (min-width: 1024px) {
+  .meal {
+    width: 32%;
+    margin: auto;
+  }
 }
 
 .meal-card {
@@ -150,6 +255,15 @@ main .main-title i {
 .meal-card:hover > .meal-card__text > .meal-card__text--bold {
   transform: translateX(-100px);
 }
+@media (max-width: 500px) {
+  .meal-card:hover > div > p {
+    animation: meal-text-crop 0.5s linear 75ms;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    animation-fill-mode: forwards;
+  }
+}
 
 footer {
   background-color: #353535;
@@ -160,9 +274,7 @@ footer {
 footer .footer-title {
   font-family: "Shrikhand";
   font-size: 20px;
-}
-footer img {
-  width: 30%;
+  margin-bottom: 15px;
 }
 footer div {
   display: flex;
@@ -172,23 +284,54 @@ footer div i {
   align-self: center;
   margin-right: 10px;
 }
-footer p {
-  margin-top: 10px;
-  margin-bottom: 10px;
+footer div p {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 30px;
+}
+footer div a {
+  text-decoration: none;
+  color: white;
+}
+@media (min-width: 1024px) {
+  footer {
+    display: flex;
+    padding: 50px 0 50px 30px;
+  }
+  footer .footer-title {
+    font-size: 40px;
+    margin: 0;
+    align-self: center;
+  }
+  footer div {
+    margin: auto;
+  }
+  footer div p {
+    align-self: center;
+  }
 }
 
 .header-banniere {
   display: flex;
 }
-.header-banniere i {
+.header-banniere a {
   align-self: center;
   font-size: 20px;
   margin-left: 20px;
   margin-right: 45px;
+  color: black;
 }
 .header-banniere .logo-header {
   margin: 20px;
   width: 50%;
+}
+@media (min-width: 1024px) {
+  .header-banniere i {
+    font-size: 40px;
+  }
+  .header-banniere .logo-header {
+    width: auto;
+  }
 }
 
 .header-body__button {
@@ -206,6 +349,7 @@ footer p {
   background: linear-gradient(#ff93e1, #a16be0);
   box-shadow: 5px 5px 10px grey;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .menu-button {
@@ -215,7 +359,7 @@ footer p {
   font-size: 20px;
   padding: 15px 40px 15px 40px;
   margin-top: 30px;
-  margin-bottom: 90px;
+  margin-bottom: 60px;
   border-radius: 30px;
   border: none;
   box-shadow: 2px 2px 5px grey;
@@ -226,6 +370,12 @@ footer p {
   background: linear-gradient(#ff93e1, #a16be0);
   box-shadow: 5px 5px 10px grey;
   transition: 0.5s;
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .menu-button {
+    margin: auto;
+  }
 }
 
 /*# sourceMappingURL=style_menu_palette.css.map */
