@@ -1,7 +1,15 @@
+.background {
+    background-image: url('../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg');
+    background-size: 110%;
+    background-repeat: no-repeat;
+    height: 280px;
+}
+
 main {
     background-color: $color-background;
     padding-top: 20px;
-    border-radius: 30px;
+    border-radius: 30px 30px 0 0;
+    margin-top: -25px;
         .main-title {
             display: flex;
             h1 {
@@ -15,18 +23,43 @@ main {
                 margin-left: 65px;
             }
         }
+    @media (min-width: $breakpoint-dekstop) {
+        display: flex; 
+        flex-wrap: wrap;
+            .main-title {
+                width: 100%;
+            }
+    }
 }
-.meal h2 {
+
+.meal {
+    h2 {
     margin-left: 20px;
     text-transform: uppercase;
     font-weight: lighter;
-    border-bottom: $color-third 4px solid; 
+    }
+    &-title-border {
+        border-bottom: $color-third 4px solid;
+        width: 60px;
+        padding-bottom: 5px;
+    }
+    @media (min-width: $breakpoint-dekstop) {
+        width: 32%;
+        margin: auto;
+    }
 }
 
 .meal-card {
     margin: 0 20px 0 20px;
     background-color: white;
     border-radius: 20px;
+    box-shadow: 2px 2px 10px rgb(182, 182, 182);
+    opacity: 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    animation: meal-card-animation .2s linear;
+    animation-fill-mode: both;
         h3 {
             margin:0 0 0 20px;
             padding-top: 15px;
@@ -34,12 +67,66 @@ main {
         &__text {
             display: flex;
             justify-content: space-between;
-            margin:0 20px 10px 20px;
+            margin-left: 20px;
                 &--bold {
                     font-weight: bold;
+                    padding-right: 20px;
+                    transition: transform .5s linear;
                 }
         }
         p {
             margin: 5px 0 15px 0;
+        }
+        &02 {
+            animation: meal-card-animation .3s .15s linear;
+            animation-fill-mode: forwards;
+        }
+        &03 {
+            animation: meal-card-animation .3s .3s linear;
+            animation-fill-mode: forwards;
+        }
+        &04 {
+            animation: meal-card-animation .3s .45s linear;
+            animation-fill-mode: forwards;
+        }
+        &-animation {
+            background-color: $color-third;
+            border-radius: 0 15px 15px 0;
+            width: 100px;
+            height: 87px;
+            display: flex;
+            position: absolute;
+            right: -100px;
+            top: 0;
+            transition: transform .5s linear;
+                i {
+                    color: $color-third;
+                    background-color: white;
+                    border-radius: 50%;
+                    padding: 8px;
+                    font-size: 22px;
+                    align-self: center;
+                    margin: auto;
+                    transform: rotate(0turn);
+                    transition: transform .5s ease-in-out 50ms;
+                }
+        }
+        &:hover > &-animation {
+            transform: translateX(-100px);
+        }
+        &:hover > &-animation > i {
+            transform: rotate(1turn);
+        }
+        &:hover > &__text > &__text--bold {
+            transform: translateX(-100px);
+        }
+        @media (max-width: 500px) {
+            &:hover > div > p {
+                animation: meal-text-crop .5s linear 75ms;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                animation-fill-mode: forwards;
+            }
         }
 }
