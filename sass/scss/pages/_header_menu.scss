@@ -12,11 +12,20 @@
             width: 50%;
         }
     @media (min-width: $breakpoint-dekstop) {
-        i {
-            font-size: 40px;
-        }
-        .logo-header {
-            width: auto;
+        width: 50%;
+        position: relative;
+        top: 30px;
+        left: 50px;
+            i {
+                font-size: 50px;
+            }
+            .logo-header {
+                width: 60%;
+            }
+    }
+    @media (max-width: 375px) {
+        a {
+            margin-right: 9%;
         }
     }
 }
