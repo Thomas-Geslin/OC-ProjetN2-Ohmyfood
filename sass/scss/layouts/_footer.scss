@@ -9,21 +9,21 @@ footer {
             margin-bottom: 15px;
         }
         div {
-            display: flex;
-                i {
-                    font-size: 12px;
-                    align-self: center;
-                    margin-right: 10px;
-                }
-                p {
-                    margin-top: 0;
-                    margin-bottom: 0;
-                    line-height: 30px;
-                }
-                a {
-                    text-decoration: none;
-                    color: white;
-                }
+            i {
+                font-size: 12px;
+                align-self: center;
+                margin-right: 10px;
+            }
+            p {
+                margin-top: 0;
+                margin-bottom: 0;
+                line-height: 30px;
+            }
+            a {
+                text-decoration: none;
+                color: white;
+                display: flex;
+            }
         }
     @media (min-width: $breakpoint-dekstop) {
         display: flex;

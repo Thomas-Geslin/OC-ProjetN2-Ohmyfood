@@ -75,47 +75,47 @@
     -webkit-background-clip: text;
   }
   10% {
-    background: linear-gradient(to top, #9356dc, white 10%);
+    background: linear-gradient(to top, #9356dc, transparent 10%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
   20% {
-    background: linear-gradient(to top, #9356dc, white 20%);
+    background: linear-gradient(to top, #9356dc, transparent 20%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
   30% {
-    background: linear-gradient(to top, #9356dc, white 30%);
+    background: linear-gradient(to top, #9356dc, transparent 30%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
   40% {
-    background: linear-gradient(to top, #9356dc, white 40%);
+    background: linear-gradient(to top, #9356dc, transparent 40%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
   50% {
-    background: linear-gradient(to top, #9356dc, white 50%);
+    background: linear-gradient(to top, #9356dc, transparent 50%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
   60% {
-    background: linear-gradient(to top, #9356dc, white 60%);
+    background: linear-gradient(to top, #9356dc, transparent 60%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
   70% {
-    background: linear-gradient(to top, #9356dc, white 70%);
+    background: linear-gradient(to top, #9356dc, transparent 70%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
   80% {
-    background: linear-gradient(to top, #9356dc, white 80%);
+    background: linear-gradient(to top, #9356dc, transparent 80%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
   90% {
-    background: linear-gradient(to top, #9356dc, white);
+    background: linear-gradient(to top, #9356dc, transparent);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
@@ -130,15 +130,17 @@ body {
   font-family: "Roboto";
 }
 
-body {
+.background {
   background-image: url("../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
-  background-size: 100%;
+  background-size: 110%;
   background-repeat: no-repeat;
-  background-position-y: 75px;
+  height: 280px;
 }
 @media (min-width: 1024px) {
-  body {
-    background-position-y: 100px;
+  .background {
+    background-size: 60%;
+    background-position-y: 80px;
+    height: 950px;
   }
 }
 
@@ -146,7 +148,9 @@ main {
   background-color: #f6f6f6;
   padding-top: 20px;
   border-radius: 30px;
-  margin-top: 240px;
+  margin-top: -25px;
+  /*Ajsutement espacement nom restaurant avec haut de la pgae*/
+  /*Ajustements chevauchement main avec background*/
 }
 main .main-title {
   display: flex;
@@ -159,15 +163,54 @@ main .main-title h1 {
 main .main-title i {
   font-size: 25px;
   align-self: center;
-  margin-left: 110px;
+  margin-left: 65px;
+  color: #f6f6f6;
+  -webkit-text-stroke: 2px black;
+}
+main .main-title i:hover {
+  cursor: pointer;
+  animation: heart-animation 0.5s linear;
+  animation-fill-mode: forwards;
 }
 @media (min-width: 1024px) {
   main {
+    border-radius: 0;
+    margin-top: -1090px;
+    margin-left: 50%;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    width: 50%;
   }
   main .main-title {
     width: 100%;
+    justify-content: center;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1520px) {
+  main {
+    padding-top: 50px;
+  }
+}
+@media (max-width: 425px) {
+  main .main-title i {
+    margin-left: 15%;
+  }
+}
+@media (min-width: 345px) and (max-width: 385px) {
+  main {
+    margin-top: -55px;
+  }
+  main .main-title h1 {
+    font-size: 25px;
+  }
+}
+@media (min-width: 320px) and (max-width: 344px) {
+  main {
+    margin-top: -75px;
+  }
+  main .main-title h1 {
+    font-size: 22px;
   }
 }
 
@@ -183,8 +226,8 @@ main .main-title i {
 }
 @media (min-width: 1024px) {
   .meal {
-    width: 32%;
     margin: auto;
+    width: 45%;
   }
 }
 
@@ -199,6 +242,7 @@ main .main-title i {
   position: relative;
   animation: meal-card-animation 0.2s linear;
   animation-fill-mode: both;
+  /*Ajustements animation rognage du texte cartes menus*/
 }
 .meal-card h3 {
   margin: 0 0 0 20px;
@@ -213,6 +257,13 @@ main .main-title i {
   font-weight: bold;
   padding-right: 20px;
   transition: transform 0.5s linear;
+}
+.meal-card__text--crop {
+  max-width: 305px;
+  transition: 0.5s linear;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .meal-card p {
   margin: 5px 0 15px 0;
@@ -233,7 +284,7 @@ main .main-title i {
   background-color: #99e2d0;
   border-radius: 0 15px 15px 0;
   width: 100px;
-  height: 87px;
+  height: 77px;
   display: flex;
   position: absolute;
   right: -100px;
@@ -260,13 +311,108 @@ main .main-title i {
 .meal-card:hover > .meal-card__text > .meal-card__text--bold {
   transform: translateX(-100px);
 }
-@media (max-width: 435px) {
-  .meal-card:hover > div > p {
-    animation: meal-text-crop 0.5s linear 75ms;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    animation-fill-mode: forwards;
+.meal-card:hover > div > .meal-card__text--crop {
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (min-width: 1024px) {
+  .meal-card {
+    width: 390px;
+  }
+}
+@media (min-width: 515px) and (max-width: 1024px) {
+  .meal-card:hover > div > .meal-card__text--crop {
+    max-width: 500px;
+  }
+}
+@media (min-width: 490px) and (max-width: 514px) {
+  .meal-card:hover > div > .meal-card__text--crop {
+    max-width: 283px;
+  }
+}
+@media (min-width: 470px) and (max-width: 489px) {
+  .meal-card:hover > div > .meal-card__text--crop {
+    max-width: 265px;
+  }
+}
+@media (min-width: 450px) and (max-width: 469px) {
+  .meal-card:hover > div > .meal-card__text--crop {
+    max-width: 240px;
+  }
+}
+@media (min-width: 435px) and (max-width: 449px) {
+  .meal-card:hover > div > .meal-card__text--crop {
+    max-width: 230px;
+  }
+}
+@media (min-width: 420px) and (max-width: 434px) {
+  .meal-card:hover > div > .meal-card__text--crop {
+    max-width: 212px;
+  }
+}
+@media (min-width: 400px) and (max-width: 419px) {
+  .meal-card:hover > div > .meal-card__text--crop {
+    max-width: 190px;
+  }
+}
+@media (min-width: 400px) and (max-width: 449px) {
+  .meal-card__text--crop {
+    font-size: 14px;
+  }
+  .meal-card h3 {
+    font-size: 17px;
+  }
+}
+@media (min-width: 370px) and (max-width: 399px) {
+  .meal-card h3 {
+    font-size: 16px;
+  }
+  .meal-card__text--crop {
+    font-size: 14px;
+  }
+  .meal-card:hover > div > .meal-card__text--crop {
+    max-width: 170px;
+  }
+}
+@media (min-width: 350px) and (max-width: 369px) {
+  .meal-card h3 {
+    font-size: 14.5px;
+  }
+  .meal-card__text--crop {
+    font-size: 12.8px;
+  }
+  .meal-card:hover > div > .meal-card__text--crop {
+    max-width: 150px;
+  }
+}
+@media (max-width: 349px) {
+  .meal-card h3 {
+    font-size: 12.5px;
+  }
+  .meal-card__text--crop {
+    font-size: 11px;
+  }
+  .meal-card:hover > div > .meal-card__text--crop {
+    max-width: 115px;
+  }
+  .meal-card-animation {
+    height: 67px;
+  }
+}
+@media (max-width: 399px) {
+  .meal-card:hover > div > .meal-card__text--bold {
+    transform: translateX(-75px);
+  }
+  .meal-card-animation {
+    width: 75px;
+  }
+  .meal-card__text--bold {
+    font-size: 13px;
+  }
+  .meal-card__text--crop {
+    transition: 0.5s ease-out;
   }
 }
 
@@ -281,9 +427,6 @@ footer .footer-title {
   font-size: 20px;
   margin-bottom: 15px;
 }
-footer div {
-  display: flex;
-}
 footer div i {
   font-size: 12px;
   align-self: center;
@@ -297,6 +440,7 @@ footer div p {
 footer div a {
   text-decoration: none;
   color: white;
+  display: flex;
 }
 @media (min-width: 1024px) {
   footer {
@@ -331,11 +475,22 @@ footer div a {
   width: 50%;
 }
 @media (min-width: 1024px) {
+  .header-banniere {
+    width: 50%;
+    position: relative;
+    top: 30px;
+    left: 50px;
+  }
   .header-banniere i {
-    font-size: 40px;
+    font-size: 50px;
   }
   .header-banniere .logo-header {
-    width: auto;
+    width: 60%;
+  }
+}
+@media (max-width: 375px) {
+  .header-banniere a {
+    margin-right: 9%;
   }
 }
 
@@ -379,7 +534,8 @@ footer div a {
 }
 @media (min-width: 1024px) {
   .menu-button {
-    margin: auto;
+    display: block;
+    width: 100%;
   }
 }
 

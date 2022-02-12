@@ -1,6 +1,43 @@
+/*Loader de la page d'acceuil*/
+section {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -100px;
+    left: -20px;
+    animation: loader-disappearance 1.5s linear;
+    animation-fill-mode: forwards;
+        .loader {
+            text-align: center;
+            border: 25px solid #f3f3f3;
+            border-top: 25px solid $color-primary;
+            border-radius: 90%;
+            width:200px;
+            height: 200px;
+            animation: loader-spin 1s linear infinite;
+        }
+    /*Centrage du loader suivant la taille de la fenêtre*/
+    @media (min-width: $breakpoint-dekstop) and (max-width: 1440px) {
+        top: -140px;
+    }
+    @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-dekstop) {
+        top: -150px;
+        left: 0px;
+    }
+    @media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+        top: -150px;
+        left: 10px;
+    }
+    @media (max-width: $breakpoint-mobile) {
+        top: -170px;
+        left: 0px;
+    }
+}
+
 /*Partie Fonctionnement*/
 article {
     animation: page-appearance 1.5s linear;
+    margin-top: -250px;
     .article-card {
         box-shadow: 2px 2px 10px rgb(212, 212, 212);
         height: 80px;
@@ -24,6 +61,7 @@ article {
             left: -10px;
         }
     }
+    /*Ajustements de la version dekstop*/
     @media (min-width: $breakpoint-dekstop) {
         display: flex;
         flex-wrap: wrap;
@@ -36,28 +74,6 @@ article {
                 margin: auto;
                 margin-bottom: 40px;
             }
-    }
-}
-
-/*Loader de la page d'acceuil*/
-section {
-    position: absolute;
-    top: 40%;
-    left: 42%;
-    animation: loader-disappearance 1.5s linear;
-    animation-fill-mode: forwards;
-        .loader {
-            text-align: center;
-            border: 25px solid #f3f3f3;
-            border-top: 25px solid $color-primary;
-            border-radius: 90%;
-            width:200px;
-            height: 200px;
-            animation: loader-spin 1s linear infinite;
-        }
-    @media (max-width: $breakpoint-dekstop) {
-        left: 20%;
-        top: 30%;
     }
 }
 
@@ -79,7 +95,7 @@ main {
                     background-color: white;
                     @include main-card-shadow;
                     border-radius: 20px;
-                    height: 280px;
+                    height: 320px;
                     overflow: hidden;
                     margin-bottom: 15px;
                     position: relative;
@@ -97,7 +113,7 @@ main {
                             right: 15px;
                         }
                         div {
-                            height: 200px;  
+                            height: 240px;  
                                 img {
                                     width: 100%;
                                     height: 100%;
@@ -136,6 +152,7 @@ main {
                         }
                 }
         }
+    /*Ajustements de la version dekstop*/
     @media (min-width: $breakpoint-dekstop) {
         flex-wrap: wrap;
         display: flex;
@@ -152,5 +169,11 @@ main {
             }
         }
 
+    }
+    /*Rapprochement de l'icone coeur sur le bord droit des cartes restaurant*/
+    @media (max-width: $breakpoint-mobile) {
+        a figure figcaption i {
+            right: 20px;
+        }
     }
 }

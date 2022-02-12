@@ -4,6 +4,11 @@
     background-repeat: no-repeat;
     background-position-y: -110px;
     height: 270px;
+    @media (min-width: $breakpoint-dekstop) {
+        background-size: 50%;
+        background-position-y: 80px;
+        height: 980px;
+    }
 }
 
 main {
@@ -21,14 +26,49 @@ main {
             i {
                 font-size: 25px;
                 align-self: center;
-                margin-left: 28px;
+                margin-left: 65px;
+                color: $color-background;
+                -webkit-text-stroke: 2px black;
+                    &:hover {
+                        cursor: pointer;
+                        animation: heart-animation .5s linear;
+                        animation-fill-mode: forwards;
+                    }
             }
         }
-    @media (min-width: $breakpoint-dekstop) {
-        display: flex; 
-        flex-wrap: wrap;
-            .main-title {
-                width: 100%;
+        @media (min-width: $breakpoint-dekstop) {
+            border-radius: 0;
+            margin-top: -1120px;
+            margin-left: 50%;
+            display: flex; 
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 50%;
+                .main-title {
+                    width: 100%;
+                    justify-content: center;
+                }
+        }
+    /*Ajustement espacement nom restaurant avec haut de la pgae*/
+    @media (min-width: $breakpoint-dekstop) and (max-width: 1520px) {
+        padding-top: 50px;
+    }
+    /*Ajustements chevauchement main avec background*/
+    @media (max-width: $breakpoint-mobile) {
+        .main-title i {
+            margin-left: 15%;
+        }
+    }
+    @media (min-width: 345px) and (max-width: 385px) {
+        margin-top: -55px;
+            .main-title h1 {
+                font-size: 25px;
+            }
+    }
+    @media (min-width: 320px) and (max-width: 344px) {
+        margin-top: -75px;
+            .main-title h1 {
+                font-size: 22px;
             }
     }
 }
@@ -44,7 +84,6 @@ main {
         padding-bottom: 5px;
     }
     @media (min-width: $breakpoint-dekstop) {
-        width: 32%;
         margin: auto;
     }
 }
@@ -74,6 +113,13 @@ main {
                     transition: transform .5s linear;
                     background-color: white;
                 }
+                &--crop {
+                    max-width: 305px;
+                    transition: .5s linear;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
         }
         p {
             margin: 5px 0 15px 0; 
@@ -94,7 +140,7 @@ main {
             background-color: $color-third;
             border-radius: 0 15px 15px 0;
             width: 100px;
-            height: 87px;
+            height: 77px;
             display: flex;
             position: absolute;
             right: -100px;
@@ -121,13 +167,107 @@ main {
         &:hover > &__text > &__text--bold {
             transform: translateX(-100px);
         }
-        @media (max-width: 435px) {
-            &:hover > div > p {
-                animation: meal-text-crop .5s linear 75ms;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                animation-fill-mode: forwards;
+        &:hover > div > &__text--crop {
+            max-width: 220px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        @media (min-width: $breakpoint-dekstop) {
+            width: 390px;
+        }
+        /*Ajustements animation rognage du texte cartes menus*/
+        @media (min-width: 515px) and (max-width: $breakpoint-dekstop) {
+            &:hover > div > &__text--crop {
+                max-width: 500px;
+            }
+        }
+        @media (min-width: 490px) and (max-width: 514px) {
+            &:hover > div > &__text--crop {
+                max-width: 283px;
+            }
+        }
+        @media (min-width: 470px) and (max-width: 489px) {
+            &:hover > div > &__text--crop {
+                max-width: 265px;
+            }
+        }
+        @media (min-width: 450px) and (max-width: 469px) {
+            &:hover > div > &__text--crop {
+                max-width: 240px;
+            }
+        }
+        @media (min-width: 435px) and (max-width: 449px) {
+            &:hover > div > &__text--crop {
+                max-width: 230px;
+            }
+        }
+        @media (min-width: 420px) and (max-width: 434px) {
+            &:hover > div > &__text--crop {
+                max-width: 212px;
+            }
+        }
+        @media (min-width: 400px) and (max-width: 419px) {
+            &:hover > div > &__text--crop {
+                max-width: 190px;
+            }
+        }
+            @media (min-width: 400px) and (max-width: 449px) {
+            &__text--crop {
+                font-size: 14px;
+            }
+            h3 {
+                font-size: 17px;
+            }
+        }
+        @media (min-width: 370px) and (max-width: 399px) {
+            h3 {
+                font-size: 16px;
+            }
+            &__text--crop {
+                font-size: 14px;
+            }
+            &:hover > div > &__text--crop {
+                max-width: 170px;
+            }
+        }
+        @media (min-width: 350px) and (max-width: 369px) {
+            h3 {
+                font-size: 14.5px;
+            }
+            &__text--crop {
+                font-size: 12.8px;
+            }
+            &:hover > div > &__text--crop {
+                max-width: 150px;
+            }
+        }
+        @media (max-width: 349px) {
+            h3 {
+                font-size: 12.5px;
+            }
+            &__text--crop {
+                font-size: 11px;
+            }
+            &:hover > div > &__text--crop {
+                max-width: 115px;
+            }
+            &-animation {
+                height: 67px;
+            }
+        }
+        @media (max-width: 399px) {
+            &:hover > div > &__text--bold {
+                transform: translateX(-75px);
+            }
+            &-animation {
+                width: 75px;
+            }
+            &__text--bold {
+                font-size: 13px;
+            }
+            &__text--crop {
+                transition: .5s ease-out;
             }
         }
 }

@@ -45,29 +45,6 @@
     }
 }
 
-/*Rogage du texte des plats*/
-@keyframes meal-text-crop{
-    0% {
-        width: auto;
-    }
-    20%{
-        max-width: 280px;
-        max-height: 19px;
-    }
-    40% {
-        max-width: 260px;
-    }
-    60% {
-        max-width: 240px;
-    }
-    80%{
-        max-width: 220px;
-    }
-    100% {
-        max-width: 200px;
-        max-height: 19px;
-    }
-}
 /*Animation du coeur*/
 @keyframes heart-animation {
     0% {
@@ -75,47 +52,47 @@
         -webkit-background-clip: text;
     }
     10% {
-        background: linear-gradient(to top, $color-primary, white 10%);
+        background: linear-gradient(to top, $color-primary, transparent 10%);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
     }
     20% {
-        background: linear-gradient(to top, $color-primary, white 20%);
+        background: linear-gradient(to top, $color-primary, transparent 20%);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
     }
     30% {
-        background: linear-gradient(to top, $color-primary, white 30%);
+        background: linear-gradient(to top, $color-primary, transparent 30%);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
     }
     40% {
-        background: linear-gradient(to top, $color-primary, white 40%);
+        background: linear-gradient(to top, $color-primary, transparent 40%);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
     }
     50% {
-        background: linear-gradient(to top, $color-primary, white 50%);
+        background: linear-gradient(to top, $color-primary, transparent 50%);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
     }
     60% {
-        background: linear-gradient(to top, $color-primary, white 60%);
+        background: linear-gradient(to top, $color-primary, transparent 60%);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
     }
     70% {
-        background: linear-gradient(to top, $color-primary, white 70%);
+        background: linear-gradient(to top, $color-primary, transparent 70%);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
     }
     80% {
-        background: linear-gradient(to top, $color-primary, white 80%);
+        background: linear-gradient(to top, $color-primary, transparent 80%);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
     }
     90% {
-        background: linear-gradient(to top, $color-primary, white);
+        background: linear-gradient(to top, $color-primary, transparent);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
     }

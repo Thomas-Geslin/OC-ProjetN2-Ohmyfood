@@ -36,6 +36,7 @@
             }
     }
     @media (min-width: $breakpoint-dekstop) {
-        margin: auto;
+        display: block;
+        width: 100%;
     }
 }
