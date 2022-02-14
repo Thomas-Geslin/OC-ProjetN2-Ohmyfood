@@ -11,6 +11,7 @@ header {
             justify-content: center;
             background-color: $color-header-mark;
             font-weight: bold;
+            box-shadow: inset 0px 3px 2px 0px rgb(201, 201, 201);
                 &__icon {
                     align-self: center;
                     padding-right: 15px;
@@ -33,6 +34,9 @@ header {
     @media (min-width: $breakpoint-dekstop) {
         .logo-header {
             width: auto;
+        }
+        .header-mark {
+            box-shadow: none;
         }
     }
 }

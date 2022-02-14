@@ -3,11 +3,25 @@
     background-size: 110%;
     background-repeat: no-repeat;
     height: 280px;
+    /*Changements background version Desktop*/
     @media (min-width: $breakpoint-dekstop) {
         background-size: 65%;
         background-position-y: 80px;
         background-position-x: -50px;
         height: 980px;
+    }
+    /*Changements background version tablette*/
+    @media (min-width: $breakpoint-tablet) and (max-width: 1023px) {
+        background-size: 50%;
+        margin-top: -94px;
+        background-position-x: right;
+    }
+    /*Ajustements centrage image plat*/
+    @media (min-width: 660px) and (max-width: $breakpoint-tablet) {
+        background-position-y: -200px;
+    }
+    @media (min-width: 520px) and (max-width: 659px) {
+        background-position-y: -100px;
     }
 }
 
@@ -70,6 +84,10 @@ main {
             .main-title h1 {
                 font-size: 22px;
             }
+    }
+    /*Changements version tablette*/ 
+    @media (min-width: $breakpoint-tablet) and (max-width: 1023px) {
+        border-radius: 0;
     }
 }
 
