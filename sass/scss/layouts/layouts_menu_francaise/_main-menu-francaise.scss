@@ -16,7 +16,7 @@
         background-position-x: right;
     }
     /*Ajustements centrage image plat*/
-    @media (min-width: 660px) and (max-width: $breakpoint-tablet) {
+    @media (min-width: 660px) and (max-width: 767px) {
         background-position-y: -200px;
     }
     @media (min-width: 520px) and (max-width: 659px) {

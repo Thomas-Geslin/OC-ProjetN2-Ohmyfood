@@ -131,7 +131,7 @@ body {
     background-position-x: right;
   }
 }
-@media (min-width: 660px) and (max-width: 768px) {
+@media (min-width: 660px) and (max-width: 767px) {
   .background {
     background-position-y: -150px;
   }
