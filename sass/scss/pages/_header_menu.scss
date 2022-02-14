@@ -11,6 +11,7 @@
             margin: 20px;
             width: 50%;
         }
+    /*Changements header version Desktop*/
     @media (min-width: $breakpoint-dekstop) {
         width: 50%;
         position: relative;
@@ -21,6 +22,19 @@
             }
             .logo-header {
                 width: 60%;
+            }
+    }
+    /*Changements header version tablette*/
+    @media (min-width: $breakpoint-tablet) and (max-width: 1023px) {
+        width: 50%;
+        position: relative;
+        top: 70px;
+            a {
+                font-size: 35px;
+            }
+            .logo-header {
+                width:70%;
+                margin: 0;
             }
     }
     @media (max-width: 375px) {
